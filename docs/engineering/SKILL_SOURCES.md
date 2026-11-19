@@ -1,38 +1,27 @@
 # Engineering Skill Sources & Supply-Chain Inventory
 
-This document tracks all external agent skills, reference repositories, and tooling frameworks referenced in the Doctor Tracker workspace.
+This document tracks all agent skills, external reference repositories, and operational frameworks active in the Doctor Tracker workspace.
 
 ---
 
-# 1. Active Workspace Skills
+# 1. Active Workspace Skills Inventory
 
-| Attribute | Details |
-| :--- | :--- |
-| **Skill Name** | `environment-setup` |
-| **Workspace Location** | `.agents/skills/environment-setup/SKILL.md` |
-| **Origin & Source** | Synthesized from `master_structural_prompt.md` and Antigravity Customization System |
-| **License** | MIT / Workspace Configuration |
-| **Operational Purpose** | Runbook for inspecting prerequisites, installing open-source engineering skills, initializing documentation, and checking quality gates. |
-| **Verification Status** | **Verified & Active** |
-
----
-
-# 2. Curated Reference Catalog
-
-| Resource Name | Source URL | Purpose | Integration Status |
-| :--- | :--- | :--- | :--- |
-| **GitHub Spec Kit** | `https://github.com/github/spec-kit` | Structured product specs and feature breakdowns | Evaluated; available via `specify init --here --integration agy` |
-| **Impeccable** | `https://github.com/pbakaus/impeccable` | UI/UX design tokens and accessibility audits | Evaluated; available via `npx impeccable install` |
-| **Anthropic Engineering** | `https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering` | System design, code reviews, and testing patterns | Referenced in architecture guidelines |
-| **OWASP ASVS & Top 10** | `https://owasp.org/www-project-application-security-verification-standard/` | Application security guidelines | Incorporated into `AGENTS.md` and `DEFINITION_OF_DONE.md` |
-| **Git Workflow** | `https://github.com/netresearch/git-workflow-skill` | Conventional commits and pull request standards | Incorporated into `.github/` and `AGENTS.md` |
+| Skill Name | Location | Origin & Source URL | License | Purpose | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`environment-setup`** | `.agents/skills/environment-setup/` | Antigravity Customization Framework | MIT | Workspace prerequisites, documentation initialization, and quality gates | **Verified & Active** |
+| **`spec-kit`** | `.agents/skills/spec-kit/` | `https://github.com/github/spec-kit` | MIT | Feature specifications, user story matrices, and acceptance criteria | **Verified & Active** |
+| **`impeccable`** | `.agents/skills/impeccable/` | `https://github.com/pbakaus/impeccable` | Apache 2.0 | Design tokens, 5-state UI coverage, and WCAG 2.2 AA accessibility audits | **Verified & Active** |
+| **`architecture`** | `.agents/skills/architecture/` | `https://github.com/anthropics/knowledge-work-plugins` | MIT | Clean architecture, decoupled REST boundaries, facet pipelines, code reviews | **Verified & Active** |
+| **`owasp-security`** | `.agents/skills/owasp-security/` | `https://owasp.org/` | CC BY-SA 4.0 | ASVS compliance, JWT lifecycle, NoSQL injection defenses, zero secrets policy | **Verified & Active** |
+| **`git-workflow`** | `.agents/skills/git-workflow/` | `https://github.com/netresearch/git-workflow-skill` | MIT | Conventional commits, multi-repo synchronization, and branch safety | **Verified & Active** |
 
 ---
 
-# 3. Supply-Chain Rules
+# 2. Supply-Chain Security Rules
 
 | Priority | Rule Name | Mandatory Guideline |
 | :--- | :--- | :--- |
-| **1** | **Code Inspection First** | Never run third-party install scripts or binaries without reviewing the source code first. |
-| **2** | **Valid Skill Frontmatter** | Skill frontmatter must use valid `name` and `description` fields. |
-| **3** | **Traceable Provenance** | When external skills are imported, log their repository URL, commit hash, and license in this inventory. |
+| **1** | **Code Inspection First** | Never execute third-party install scripts or binaries without reviewing their full contents first. |
+| **2** | **Valid Skill Frontmatter** | Skill frontmatter must contain valid YAML `name` and `description` attributes. |
+| **3** | **Traceable Provenance** | Every installed skill must have its source repository, license, and purpose logged in this inventory. |
+| **4** | **Code-Free Documentation** | Documentation records must remain code-free and structured in pure markdown tables and diagrams. |
