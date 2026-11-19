@@ -1,7 +1,7 @@
 # Project State & Context Continuity: Doctor Tracker
 
 **Last Updated**: November 20, 2026  
-**Current Phase**: Phase 5: Client Feature Implementation & Skill Integration  
+**Current Phase**: Phase 6: Production Verification & Cloud Deployment  
 **Authoritative Source**: `docs/PROJECT_STATE.md`
 
 ---
@@ -13,10 +13,10 @@
 | **M0: Workspace Invariants** | `AGENTS.md`, `.agents/skills/` | **Completed** | Strict constitution active; all 6 engineering skills installed & verified; 0 em dashes |
 | **M1: Engineering Foundation** | Git, `.github/`, `docs/` | **Completed** | Unified monorepo on `main`; full context system created |
 | **M2: Architecture & Requirements** | Requirements, Architecture, DB, UI/UX | **Completed** | 100% table-based specs, vector diagrams, and MongoDB Mongoose design |
-| **M3: Backend API & Database** | Express, TypeScript, Mongoose, Atlas | **Completed** | Live MongoDB Atlas seeded (1 admin, 10 doctors, 40 patients); zero TS errors; Railway service live |
+| **M3: Backend API & Database** | Express, TypeScript, Mongoose, Atlas | **Completed** | Live MongoDB Atlas seeded (1 admin, 10 doctors, 40 patients); zero TS errors; Railway deployment active |
 | **M4: Decoupled Repositories** | GitHub separate remotes | **Completed** | `doctor-tracker-backend` & `doctor-tracker-frontend` created, subtree-synced, and public |
-| **M5: Frontend Feature Implementation** | Next.js 15, Auth, Doctors, Patients, Charts | **In Progress** | Building `/login`, `/doctors` (with Patient Drawer), `/patients`, and Recharts dashboard |
-| **M6: Deployment & Submission** | Vercel (Client) + Railway (API) | **In Progress** | Railway API verified live; Vercel deployment targeted |
+| **M5: Frontend Feature Implementation** | Next.js 15, Auth, Doctors, Patients, Charts | **Completed** | Implemented 60-30-10 color tokens, 5-state coverage, pixel-aligned skeletons; 0 Next.js build errors |
+| **M6: Deployment & Submission** | Vercel (Client) + Railway (API) | **In Progress** | Standalone repositories synced; Railway service configured; Vercel ready |
 
 ---
 
@@ -29,14 +29,19 @@
 | **Skills System** | All 6 skills (`environment-setup`, `spec-kit`, `impeccable`, `architecture`, `owasp-security`, `git-workflow`) installed in `.agents/skills/` | Verified with valid YAML frontmatter and inventory entries |
 | **Database Live Seeding** | Live MongoDB Atlas cluster connected and seeded with 1 admin, 10 doctors, 40 patients | Verified via `server/src/seed.ts` run |
 | **Backend Service** | Express 5 + TypeScript + Mongoose REST API built with zero errors in `server/dist/` | Verified via `npm run build` |
-| **Railway Deployment** | Project `doctor-tracker`, service `doctor-tracker-api`, live domain generated | Verified live at `https://doctor-tracker-api-production-049aa198.up.railway.app` |
-| **Frontend Foundation** | Next.js 15 App Router initialized in `client/` with React 19, Tailwind CSS, TanStack Query | Verified via `npm run build` (0 build errors) |
+| **Design System & Tokens** | 3 primary brand scales (Slate 60%, Clinical Teal 30%, Accent Amber 10%), 10 shades each (50-900) | Configured in `tailwind.config.ts` and `globals.css` |
+| **Reusable Components** | Button, Input, Select, Badge, Modal, Drawer, EmptyState, ErrorAlert, Skeleton | Fully implemented with WCAG 2.2 AA accessibility |
+| **Analytics Dashboard** | Metric cards, Recharts monthly intake bar chart, diagnosis donut chart, doctor workload rank | Tested in `client/src/app/page.tsx` |
+| **Doctor Directory** | Search, specialization filter, hospital filter, doctor cards, slide-over Patient Drawer | Tested in `client/src/app/doctors/page.tsx` |
+| **Inpatient Management** | Search, status pills (Admitted, Observation, Discharged), pagination, add/edit modal | Tested in `client/src/app/patients/page.tsx` |
+| **Authentication View** | Clinical login card with 1-click demo login button (`admin@clinic.com` / `password123`) | Tested in `client/src/app/(auth)/login/page.tsx` |
+| **Production Build** | Next.js 16 App Router build compiled and statically generated in 683ms | 0 errors (`npm run build`) |
 
 ---
 
 # 3. Current Task
 
-Complete frontend clinical views in `client/` (`/login`, `/`, `/doctors` with slide-over Patient Drawer, and `/patients`) according to company evaluation criteria and design system tokens.
+Finalize production deployment verification on Railway and Vercel, and update submission README with live URLs.
 
 ---
 
@@ -44,12 +49,9 @@ Complete frontend clinical views in `client/` (`/login`, `/`, `/doctors` with sl
 
 | Sequence | Task Description | Target Directory | Key Technologies |
 | :--- | :--- | :--- | :--- |
-| **1** | Build Clinical Auth View with 1-Click Demo Login | `client/src/app/(auth)/login/` | Next.js 15, JWT storage, clinical teal |
-| **2** | Build Global Clinical Layout (Navbar, Sidebar, User Menu) | `client/src/components/layout/` | Tailwind CSS, Lucide icons, responsive drawer |
-| **3** | Build Analytics Dashboard with Recharts | `client/src/app/` (page) | Recharts, `$facet` endpoint consumer |
-| **4** | Build Doctor Directory with Slide-over Patient Drawer | `client/src/app/doctors/` | TanStack Query, compound filters, slide-over drawer |
-| **5** | Build Patient Management Table & Status Badges | `client/src/app/patients/` | Responsive table, pagination, search |
-| **6** | Deploy Frontend to Vercel & Update README with Live URLs | Vercel, `README.md` | Vercel CLI / Git integration |
+| **1** | Verify Railway Live API Health & Data Endpoints | Railway Cloud | HTTP assertion on `/health` and `/api/v1` |
+| **2** | Deploy Frontend to Vercel | Vercel Cloud | Next.js 15, Vercel CLI |
+| **3** | Update Root, Backend, and Frontend READMEs with Live URLs | `README.md` | Code-free documentation |
 
 ---
 
@@ -57,8 +59,8 @@ Complete frontend clinical views in `client/` (`/login`, `/`, `/doctors` with sl
 
 | Category | Description | Mitigation Strategy |
 | :--- | :--- | :--- |
-| **Blockers** | None. All infrastructure, skills, database, and backend services are operational. | Proceed immediately with frontend view implementation. |
-| **Risks** | Rate limits on external API endpoints during rapid testing. | Implement TanStack Query caching with stale-time thresholds. |
+| **Blockers** | None. All frontend and backend code compiles with 0 errors and is pushed to GitHub remotes. | Monitor Railway build and execute Vercel deployment. |
+| **Risks** | Cold start delays on cloud hosting. | Client includes polished skeleton loaders and error retry fallbacks. |
 
 ---
 
@@ -69,9 +71,10 @@ Complete frontend clinical views in `client/` (`/login`, `/`, `/doctors` with sl
 | **ADR 0001** | Decoupled Two-Tier Architecture | Separate `client/` (Next.js) from `server/` (Express REST API) to maintain clean concerns, allow independent scaling, and provide a standalone REST API. |
 | **ADR 0002** | MongoDB with Compound Indexing & Lean Aggregations | Selected MongoDB (6.0+) with Mongoose ODM to directly fulfill the company's task evaluation criteria, leveraging compound indexes, text search, and single-pass `$facet` aggregation pipelines. |
 | **ADR 0003** | Decoupled Independent Repositories for Evaluation | Created `doctor-tracker-backend` and `doctor-tracker-frontend` repositories to satisfy the evaluation rubric requiring two distinct repo links. |
+| **ADR 0004** | Impeccable 60-30-10 Design System & 5-State Coverage | Established Slate (60%), Clinical Teal (30%), and Accent Amber (10%) color scales with pixel-aligned skeleton loading to eliminate layout shifts (CLS = 0). |
 
 ---
 
 # 7. Exact Next Action
 
-Implement the clinical authentication view (`/login`) with demo credentials shortcut, followed by global navigation and clinical dashboard.
+Check Railway deployment status and verify live API endpoints.
