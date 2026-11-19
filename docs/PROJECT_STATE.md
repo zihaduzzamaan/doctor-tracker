@@ -13,10 +13,10 @@
 | **M0: Workspace Invariants** | `AGENTS.md`, `.agents/skills/` | **Completed** | Strict constitution & setup skill active; 0 em dashes, 0 bullet points |
 | **M1: Engineering Foundation** | Git, `.github/`, `docs/` | **Completed** | Git initialized on `main`; full context system created |
 | **M2: Architecture & Requirements** | Requirements, Architecture, DB, UI/UX | **Completed** | 100% table-based specs, vector diagrams, and MongoDB Mongoose design |
-| **M3: Backend API Scaffolding** | Express, TypeScript, Mongoose, JWT | **Pending** | Ready to scaffold `server/` with models, routes, and seed script |
-| **M4: Frontend Client Scaffolding** | Next.js, Tailwind, TanStack Query | **Pending** | Ready to scaffold `client/` with responsive App Router |
-| **M5: Feature Implementation** | Auth, Doctors, Patients, Charts | **Pending** | Scheduled after scaffolding |
-| **M6: Deployment & Submission** | Vercel (Client) + Render (API) | **Pending** | Live links and screenshots for final submission |
+| **M3: Backend API Scaffolding** | Express, TypeScript, Mongoose, JWT | **Completed** | Full Express REST API with MongoDB Atlas connection, seed script, and zero TS errors |
+| **M4: Frontend Client Scaffolding** | Next.js 15, Tailwind, TanStack Query | **Completed** | Next.js 15 App Router initialized with clinical teal tokens and query provider |
+| **M5: Feature Implementation** | Auth, Doctors, Patients, Charts | **In Progress** | Building `/login`, `/doctors` (with Patient Drawer), `/patients`, and Recharts dashboard |
+| **M6: Deployment & Submission** | Vercel (Client) + Railway (API) | **In Progress** | Standalone repositories published; Railway infrastructure live; Vercel ready |
 
 ---
 
