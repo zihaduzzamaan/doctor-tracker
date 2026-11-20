@@ -1,0 +1,2845 @@
+{
+  "Q1_Doctor_Default_List": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {},
+      "indexFilterSet": false,
+      "queryHash": "7B43E37B",
+      "planCacheShapeHash": "7B43E37B",
+      "planCacheKey": "76FECFA7",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "SORT",
+        "sortPattern": {
+          "createdAt": -1
+        },
+        "memLimit": 33554432,
+        "limitAmount": 10,
+        "type": "simple",
+        "inputStage": {
+          "stage": "COLLSCAN",
+          "direction": "forward"
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 10,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 12,
+      "executionStages": {
+        "isCached": false,
+        "stage": "SORT",
+        "nReturned": 10,
+        "executionTimeMillisEstimate": 0,
+        "works": 24,
+        "advanced": 10,
+        "needTime": 13,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "sortPattern": {
+          "createdAt": -1
+        },
+        "memLimit": 33554432,
+        "limitAmount": 10,
+        "type": "simple",
+        "totalDataSizeSorted": 3199,
+        "usedDisk": false,
+        "spills": 0,
+        "spilledDataStorageSize": 0,
+        "inputStage": {
+          "stage": "COLLSCAN",
+          "nReturned": 12,
+          "executionTimeMillisEstimate": 0,
+          "works": 13,
+          "advanced": 12,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "direction": "forward",
+          "docsExamined": 12
+        }
+      }
+    },
+    "queryShapeHash": "243F0A3D91236EC83D05DC2EE1EB2027F0EADD9AF07444943DE65AF224E33733",
+    "command": {
+      "find": "doctors",
+      "filter": {},
+      "sort": {
+        "createdAt": -1
+      },
+      "limit": 10,
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634204"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634204"
+    }
+  },
+  "Q2A_Doctor_Specialization_Match": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "specialization": {
+          "$eq": "Cardiology"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "DCD8B308",
+      "planCacheShapeHash": "DCD8B308",
+      "planCacheKey": "F89A260D",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "specialization": 1
+          },
+          "indexName": "specialization_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "specialization": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "specialization": [
+              "[\"Cardiology\", \"Cardiology\"]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 2,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 2,
+      "totalDocsExamined": 2,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 2,
+        "executionTimeMillisEstimate": 0,
+        "works": 3,
+        "advanced": 2,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 2,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 2,
+          "executionTimeMillisEstimate": 0,
+          "works": 3,
+          "advanced": 2,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "specialization": 1
+          },
+          "indexName": "specialization_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "specialization": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "specialization": [
+              "[\"Cardiology\", \"Cardiology\"]"
+            ]
+          },
+          "keysExamined": 2,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "637DC3DC07275B37F7B91B7F5A54C785E135BD106B7A6B3283F8A3C67B128F10",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "specialization": "Cardiology"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634205"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634205"
+    }
+  },
+  "Q2B_Doctor_Specialization_NonMatch": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "specialization": {
+          "$eq": "NonExistentSpecialty123"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "DCD8B308",
+      "planCacheShapeHash": "DCD8B308",
+      "planCacheKey": "F89A260D",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "specialization": 1
+          },
+          "indexName": "specialization_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "specialization": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "specialization": [
+              "[\"NonExistentSpecialty123\", \"NonExistentSpecialty123\"]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 1,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "specialization": 1
+          },
+          "indexName": "specialization_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "specialization": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "specialization": [
+              "[\"NonExistentSpecialty123\", \"NonExistentSpecialty123\"]"
+            ]
+          },
+          "keysExamined": 0,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "637DC3DC07275B37F7B91B7F5A54C785E135BD106B7A6B3283F8A3C67B128F10",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "specialization": "NonExistentSpecialty123"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634205"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634205"
+    }
+  },
+  "Q3A_Doctor_Hospital_Match": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "hospital": {
+          "$eq": "Metropolitan General Hospital"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "438693CD",
+      "planCacheShapeHash": "438693CD",
+      "planCacheKey": "31C73AE4",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "hospital": 1
+          },
+          "indexName": "hospital_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "hospital": 1,
+              "specialization": 1,
+              "createdAt": -1
+            },
+            "indexName": "hospital_1_specialization_1_createdAt_-1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "hospital": [],
+              "specialization": [],
+              "createdAt": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "hospital": [
+                "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+              ],
+              "specialization": [
+                "[MinKey, MaxKey]"
+              ],
+              "createdAt": [
+                "[MaxKey, MinKey]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "hospital": 1
+          },
+          "indexName": "hospital_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+            ]
+          },
+          "keysExamined": 0,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "716A7EE53683057199FF2688847A9A0FAD2B1003A5785A9028F86C060EDC94B3",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "hospital": "Metropolitan General Hospital"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634206"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634206"
+    }
+  },
+  "Q3B_Doctor_Hospital_NonMatch": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "hospital": {
+          "$eq": "FictionalHospital456"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "438693CD",
+      "planCacheShapeHash": "438693CD",
+      "planCacheKey": "31C73AE4",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "hospital": 1
+          },
+          "indexName": "hospital_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"FictionalHospital456\", \"FictionalHospital456\"]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "hospital": 1,
+              "specialization": 1,
+              "createdAt": -1
+            },
+            "indexName": "hospital_1_specialization_1_createdAt_-1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "hospital": [],
+              "specialization": [],
+              "createdAt": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "hospital": [
+                "[\"FictionalHospital456\", \"FictionalHospital456\"]"
+              ],
+              "specialization": [
+                "[MinKey, MaxKey]"
+              ],
+              "createdAt": [
+                "[MaxKey, MinKey]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "hospital": 1
+          },
+          "indexName": "hospital_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"FictionalHospital456\", \"FictionalHospital456\"]"
+            ]
+          },
+          "keysExamined": 0,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "716A7EE53683057199FF2688847A9A0FAD2B1003A5785A9028F86C060EDC94B3",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "hospital": "FictionalHospital456"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634207"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634207"
+    }
+  },
+  "Q4_Doctor_Compound_Filter": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "$and": [
+          {
+            "hospital": {
+              "$eq": "Metropolitan General Hospital"
+            }
+          },
+          {
+            "specialization": {
+              "$eq": "Cardiology"
+            }
+          }
+        ]
+      },
+      "indexFilterSet": false,
+      "queryHash": "AF3AA86D",
+      "planCacheShapeHash": "AF3AA86D",
+      "planCacheKey": "2E38A2E9",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "hospital": 1,
+            "specialization": 1,
+            "createdAt": -1
+          },
+          "indexName": "hospital_1_specialization_1_createdAt_-1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": [],
+            "specialization": [],
+            "createdAt": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+            ],
+            "specialization": [
+              "[\"Cardiology\", \"Cardiology\"]"
+            ],
+            "createdAt": [
+              "[MaxKey, MinKey]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "SORT",
+          "sortPattern": {
+            "createdAt": -1
+          },
+          "memLimit": 33554432,
+          "type": "simple",
+          "inputStage": {
+            "stage": "FETCH",
+            "filter": {
+              "specialization": {
+                "$eq": "Cardiology"
+              }
+            },
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "hospital": 1
+              },
+              "indexName": "hospital_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "hospital": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "hospital": [
+                  "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "isCached": false,
+          "stage": "SORT",
+          "sortPattern": {
+            "createdAt": -1
+          },
+          "memLimit": 33554432,
+          "type": "simple",
+          "inputStage": {
+            "stage": "FETCH",
+            "filter": {
+              "hospital": {
+                "$eq": "Metropolitan General Hospital"
+              }
+            },
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "specialization": 1
+              },
+              "indexName": "specialization_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "specialization": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "specialization": [
+                  "[\"Cardiology\", \"Cardiology\"]"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 1,
+        "works": 2,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 1,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "hospital": 1,
+            "specialization": 1,
+            "createdAt": -1
+          },
+          "indexName": "hospital_1_specialization_1_createdAt_-1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "hospital": [],
+            "specialization": [],
+            "createdAt": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "hospital": [
+              "[\"Metropolitan General Hospital\", \"Metropolitan General Hospital\"]"
+            ],
+            "specialization": [
+              "[\"Cardiology\", \"Cardiology\"]"
+            ],
+            "createdAt": [
+              "[MaxKey, MinKey]"
+            ]
+          },
+          "keysExamined": 0,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "8E376B43749DA929BA97F7147E68B12DF04CF2C19724243963D6AC75052723E8",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "hospital": "Metropolitan General Hospital",
+        "specialization": "Cardiology"
+      },
+      "sort": {
+        "createdAt": -1
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634207"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634207"
+    }
+  },
+  "Q5_Doctor_Text_Search": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.doctors",
+      "parsedQuery": {
+        "$text": {
+          "$search": "Cardiology",
+          "$language": "english",
+          "$caseSensitive": false,
+          "$diacriticSensitive": false
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "BEA123E8",
+      "planCacheShapeHash": "BEA123E8",
+      "planCacheKey": "2A18FF18",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "SORT",
+        "sortPattern": {
+          "createdAt": -1
+        },
+        "memLimit": 33554432,
+        "type": "simple",
+        "inputStage": {
+          "stage": "TEXT_MATCH",
+          "indexPrefix": {},
+          "indexName": "doctor_name_text_specialization_text_hospital_text",
+          "parsedTextQuery": {
+            "terms": [
+              "cardiolog"
+            ],
+            "negatedTerms": [],
+            "phrases": [],
+            "negatedPhrases": []
+          },
+          "textIndexVersion": 3,
+          "inputStage": {
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "_fts": "text",
+                "_ftsx": 1
+              },
+              "indexName": "doctor_name_text_specialization_text_hospital_text",
+              "isMultiKey": true,
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "backward",
+              "indexBounds": {}
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 2,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 2,
+      "totalDocsExamined": 2,
+      "executionStages": {
+        "isCached": false,
+        "stage": "SORT",
+        "nReturned": 2,
+        "executionTimeMillisEstimate": 0,
+        "works": 6,
+        "advanced": 2,
+        "needTime": 3,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "sortPattern": {
+          "createdAt": -1
+        },
+        "memLimit": 33554432,
+        "type": "simple",
+        "totalDataSizeSorted": 629,
+        "usedDisk": false,
+        "spills": 0,
+        "spilledDataStorageSize": 0,
+        "inputStage": {
+          "stage": "TEXT_MATCH",
+          "nReturned": 2,
+          "executionTimeMillisEstimate": 0,
+          "works": 3,
+          "advanced": 2,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "indexPrefix": {},
+          "indexName": "doctor_name_text_specialization_text_hospital_text",
+          "parsedTextQuery": {
+            "terms": [
+              "cardiolog"
+            ],
+            "negatedTerms": [],
+            "phrases": [],
+            "negatedPhrases": []
+          },
+          "textIndexVersion": 3,
+          "docsRejected": 0,
+          "inputStage": {
+            "stage": "FETCH",
+            "nReturned": 2,
+            "executionTimeMillisEstimate": 0,
+            "works": 3,
+            "advanced": 2,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "docsExamined": 2,
+            "alreadyHasObj": 0,
+            "inputStage": {
+              "stage": "IXSCAN",
+              "nReturned": 2,
+              "executionTimeMillisEstimate": 0,
+              "works": 3,
+              "advanced": 2,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "keyPattern": {
+                "_fts": "text",
+                "_ftsx": 1
+              },
+              "indexName": "doctor_name_text_specialization_text_hospital_text",
+              "isMultiKey": true,
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "backward",
+              "indexBounds": {},
+              "keysExamined": 2,
+              "seeks": 1,
+              "dupsTested": 2,
+              "dupsDropped": 0
+            }
+          }
+        }
+      }
+    },
+    "queryShapeHash": "C50D88C41417AEC6E271F6CD2CE6A8BF034D9813B3DB147038C93F4DF5F6F210",
+    "command": {
+      "find": "doctors",
+      "filter": {
+        "$text": {
+          "$search": "Cardiology"
+        }
+      },
+      "sort": {
+        "createdAt": -1
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152404460634207"
+      },
+      "signature": {
+        "hash": "f3KJ0svUaS8/zwEvoYtx9/OGOSU=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152404460634207"
+    }
+  },
+  "Q6A_Patient_DoctorId_Match": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "doctor_id": {
+          "$eq": "6aff6d2f24621ceee5030f1d"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "ED04DB04",
+      "planCacheShapeHash": "ED04DB04",
+      "planCacheKey": "4937412A",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": true,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "doctor_id": 1
+          },
+          "indexName": "doctor_id_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "doctor_id": 1,
+              "status": 1
+            },
+            "indexName": "doctor_id_1_status_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "doctor_id": [],
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "doctor_id": [
+                "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+              ],
+              "status": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 4,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 4,
+      "totalDocsExamined": 4,
+      "executionStages": {
+        "isCached": true,
+        "stage": "FETCH",
+        "nReturned": 4,
+        "executionTimeMillisEstimate": 0,
+        "works": 6,
+        "advanced": 4,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 4,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 4,
+          "executionTimeMillisEstimate": 0,
+          "works": 5,
+          "advanced": 4,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "doctor_id": 1
+          },
+          "indexName": "doctor_id_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ]
+          },
+          "keysExamined": 4,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "E4CE7C9C69102126913B056AB0BD1E3509B5065AABFD9AAA638207518E7648BA",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "doctor_id": "6aff6d2f24621ceee5030f1d"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601410"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601410"
+    }
+  },
+  "Q6B_Patient_DoctorId_NonMatch": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "doctor_id": {
+          "$eq": "000000000000000000000000"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "ED04DB04",
+      "planCacheShapeHash": "ED04DB04",
+      "planCacheKey": "4937412A",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": true,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "doctor_id": 1
+          },
+          "indexName": "doctor_id_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "doctor_id": 1,
+              "status": 1
+            },
+            "indexName": "doctor_id_1_status_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "doctor_id": [],
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "doctor_id": [
+                "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+              ],
+              "status": [
+                "[MinKey, MaxKey]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": true,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "doctor_id": 1
+          },
+          "indexName": "doctor_id_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+            ]
+          },
+          "keysExamined": 0,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "E4CE7C9C69102126913B056AB0BD1E3509B5065AABFD9AAA638207518E7648BA",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "doctor_id": "000000000000000000000000"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601418"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601418"
+    }
+  },
+  "Q7A_Patient_Drawer_Caseload_Match": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "$and": [
+          {
+            "doctor_id": {
+              "$eq": "6aff6d2f24621ceee5030f1d"
+            }
+          },
+          {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          }
+        ]
+      },
+      "indexFilterSet": false,
+      "queryHash": "17D4D084",
+      "planCacheShapeHash": "17D4D084",
+      "planCacheKey": "B6E43F0F",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "doctor_id": {
+              "$eq": "6aff6d2f24621ceee5030f1d"
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "status": 1
+            },
+            "indexName": "status_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "status": [
+                "[MinKey, \"discharged\")",
+                "(\"discharged\", MaxKey]"
+              ]
+            }
+          }
+        },
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "doctor_id": 1
+            },
+            "indexName": "doctor_id_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "doctor_id": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "doctor_id": [
+                "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 4,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 5,
+      "totalDocsExamined": 4,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 4,
+        "executionTimeMillisEstimate": 0,
+        "works": 6,
+        "advanced": 4,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 4,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 4,
+          "executionTimeMillisEstimate": 0,
+          "works": 5,
+          "advanced": 4,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          },
+          "keysExamined": 5,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "8934BA680F1829B42B9502E999004B32B52F9EB4F360F2CC7EC15D2AE5598713",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "doctor_id": "6aff6d2f24621ceee5030f1d",
+        "status": {
+          "$ne": "discharged"
+        }
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601430"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601430"
+    }
+  },
+  "Q7B_Patient_Drawer_Caseload_NonMatch": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "$and": [
+          {
+            "doctor_id": {
+              "$eq": "000000000000000000000000"
+            }
+          },
+          {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          }
+        ]
+      },
+      "indexFilterSet": false,
+      "queryHash": "17D4D084",
+      "planCacheShapeHash": "17D4D084",
+      "planCacheKey": "B6E43F0F",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "doctor_id": {
+              "$eq": "000000000000000000000000"
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "status": 1
+            },
+            "indexName": "status_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "status": [
+                "[MinKey, \"discharged\")",
+                "(\"discharged\", MaxKey]"
+              ]
+            }
+          }
+        },
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "doctor_id": 1
+            },
+            "indexName": "doctor_id_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "doctor_id": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "doctor_id": [
+                "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 1,
+      "totalDocsExamined": 0,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 2,
+        "advanced": 0,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 0,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 1,
+          "advanced": 0,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('000000000000000000000000'), ObjectId('000000000000000000000000')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          },
+          "keysExamined": 1,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "8934BA680F1829B42B9502E999004B32B52F9EB4F360F2CC7EC15D2AE5598713",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "doctor_id": "000000000000000000000000",
+        "status": {
+          "$ne": "discharged"
+        }
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601446"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601446"
+    }
+  },
+  "Q8_Patient_Name_Regex_Search": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "patient_name": {
+          "$regex": "Sarah",
+          "$options": "i"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "A0026058",
+      "planCacheShapeHash": "A0026058",
+      "planCacheKey": "92E91F48",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 10,
+        "inputStage": {
+          "stage": "FETCH",
+          "filter": {
+            "patient_name": {
+              "$regex": "Sarah",
+              "$options": "i"
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "admission_date": 1
+            },
+            "indexName": "admission_date_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "admission_date": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "backward",
+            "indexBounds": {
+              "admission_date": [
+                "[MaxKey, MinKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 0,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 40,
+      "totalDocsExamined": 40,
+      "executionStages": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "nReturned": 0,
+        "executionTimeMillisEstimate": 0,
+        "works": 41,
+        "advanced": 0,
+        "needTime": 40,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "limitAmount": 10,
+        "inputStage": {
+          "stage": "FETCH",
+          "filter": {
+            "patient_name": {
+              "$regex": "Sarah",
+              "$options": "i"
+            }
+          },
+          "nReturned": 0,
+          "executionTimeMillisEstimate": 0,
+          "works": 41,
+          "advanced": 0,
+          "needTime": 40,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 40,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 40,
+            "executionTimeMillisEstimate": 0,
+            "works": 41,
+            "advanced": 40,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "admission_date": 1
+            },
+            "indexName": "admission_date_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "admission_date": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "backward",
+            "indexBounds": {
+              "admission_date": [
+                "[MaxKey, MinKey]"
+              ]
+            },
+            "keysExamined": 40,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "queryShapeHash": "1A70B1FAD51407E3B1A96B2D5AD9997F8B161BC5B3F0258878D7F21E7E68B62B",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "patient_name": {
+          "$regex": "Sarah",
+          "$options": "i"
+        }
+      },
+      "sort": {
+        "admission_date": -1
+      },
+      "limit": 10,
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601459"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601459"
+    }
+  },
+  "Q9_Patient_Condition_Regex": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "condition": {
+          "$regex": "Hypertension",
+          "$options": "i"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "7036CCB9",
+      "planCacheShapeHash": "7036CCB9",
+      "planCacheKey": "F703A91C",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": true,
+        "stage": "LIMIT",
+        "limitAmount": 10,
+        "inputStage": {
+          "stage": "FETCH",
+          "filter": {
+            "condition": {
+              "$regex": "Hypertension",
+              "$options": "i"
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "admission_date": 1
+            },
+            "indexName": "admission_date_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "admission_date": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "backward",
+            "indexBounds": {
+              "admission_date": [
+                "[MaxKey, MinKey]"
+              ]
+            }
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "SORT",
+          "sortPattern": {
+            "admission_date": -1
+          },
+          "memLimit": 33554432,
+          "limitAmount": 10,
+          "type": "simple",
+          "inputStage": {
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "filter": {
+                "condition": {
+                  "$regex": "Hypertension",
+                  "$options": "i"
+                }
+              },
+              "keyPattern": {
+                "condition": 1
+              },
+              "indexName": "condition_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "condition": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "condition": [
+                  "[\"\", {})",
+                  "[/Hypertension/i, /Hypertension/i]"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 3,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 40,
+      "totalDocsExamined": 40,
+      "executionStages": {
+        "isCached": true,
+        "stage": "LIMIT",
+        "nReturned": 3,
+        "executionTimeMillisEstimate": 0,
+        "works": 42,
+        "advanced": 3,
+        "needTime": 37,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "limitAmount": 10,
+        "inputStage": {
+          "stage": "FETCH",
+          "filter": {
+            "condition": {
+              "$regex": "Hypertension",
+              "$options": "i"
+            }
+          },
+          "nReturned": 3,
+          "executionTimeMillisEstimate": 0,
+          "works": 42,
+          "advanced": 3,
+          "needTime": 37,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "docsExamined": 40,
+          "alreadyHasObj": 0,
+          "inputStage": {
+            "stage": "IXSCAN",
+            "nReturned": 40,
+            "executionTimeMillisEstimate": 0,
+            "works": 41,
+            "advanced": 40,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "keyPattern": {
+              "admission_date": 1
+            },
+            "indexName": "admission_date_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "admission_date": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "backward",
+            "indexBounds": {
+              "admission_date": [
+                "[MaxKey, MinKey]"
+              ]
+            },
+            "keysExamined": 40,
+            "seeks": 1,
+            "dupsTested": 0,
+            "dupsDropped": 0
+          }
+        }
+      }
+    },
+    "queryShapeHash": "FCF6FF9E626A187793C8068326B40D931A12E0090E7A4E9BCEEE23519C715E8D",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "condition": {
+          "$regex": "Hypertension",
+          "$options": "i"
+        }
+      },
+      "sort": {
+        "admission_date": -1
+      },
+      "limit": 10,
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601471"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601471"
+    }
+  },
+  "Q10_Patient_Condition_Exact": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "condition": {
+          "$eq": "Hypertension"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "3719BBD8",
+      "planCacheShapeHash": "3719BBD8",
+      "planCacheKey": "E86B78D0",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "condition": 1
+          },
+          "indexName": "condition_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "condition": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "condition": [
+              "[\"Hypertension\", \"Hypertension\"]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 3,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 3,
+      "totalDocsExamined": 3,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 3,
+        "executionTimeMillisEstimate": 0,
+        "works": 4,
+        "advanced": 3,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 3,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 3,
+          "executionTimeMillisEstimate": 0,
+          "works": 4,
+          "advanced": 3,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "condition": 1
+          },
+          "indexName": "condition_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "condition": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "condition": [
+              "[\"Hypertension\", \"Hypertension\"]"
+            ]
+          },
+          "keysExamined": 3,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "9DE47A43C400AF5E3F3F6187B263C0A745B93988D4131C2267FB11E1E439AEC6",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "condition": "Hypertension"
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601483"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601483"
+    }
+  },
+  "Q11_Patient_Recount_Query": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "doctor_tracker.patients",
+      "parsedQuery": {
+        "$and": [
+          {
+            "doctor_id": {
+              "$eq": "6aff6d2f24621ceee5030f1d"
+            }
+          },
+          {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          }
+        ]
+      },
+      "indexFilterSet": false,
+      "queryHash": "17D4D084",
+      "planCacheShapeHash": "17D4D084",
+      "planCacheKey": "B6E43F0F",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": [
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "doctor_id": {
+              "$eq": "6aff6d2f24621ceee5030f1d"
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "status": 1
+            },
+            "indexName": "status_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "status": [
+                "[MinKey, \"discharged\")",
+                "(\"discharged\", MaxKey]"
+              ]
+            }
+          }
+        },
+        {
+          "isCached": false,
+          "stage": "FETCH",
+          "filter": {
+            "status": {
+              "$not": {
+                "$eq": "discharged"
+              }
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "doctor_id": 1
+            },
+            "indexName": "doctor_id_1",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "doctor_id": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "doctor_id": [
+                "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 4,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 5,
+      "totalDocsExamined": 4,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 4,
+        "executionTimeMillisEstimate": 0,
+        "works": 6,
+        "advanced": 4,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 4,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 4,
+          "executionTimeMillisEstimate": 0,
+          "works": 5,
+          "advanced": 4,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "doctor_id": 1,
+            "status": 1
+          },
+          "indexName": "doctor_id_1_status_1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "doctor_id": [],
+            "status": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "doctor_id": [
+              "[ObjectId('6aff6d2f24621ceee5030f1d'), ObjectId('6aff6d2f24621ceee5030f1d')]"
+            ],
+            "status": [
+              "[MinKey, \"discharged\")",
+              "(\"discharged\", MaxKey]"
+            ]
+          },
+          "keysExamined": 5,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    },
+    "queryShapeHash": "8934BA680F1829B42B9502E999004B32B52F9EB4F360F2CC7EC15D2AE5598713",
+    "command": {
+      "find": "patients",
+      "filter": {
+        "doctor_id": "6aff6d2f24621ceee5030f1d",
+        "status": {
+          "$ne": "discharged"
+        }
+      },
+      "$db": "doctor_tracker"
+    },
+    "serverInfo": {
+      "host": "ac-8tlz9wo-shard-00-01.dbtybpi.mongodb.net",
+      "port": 27017,
+      "version": "8.0.39",
+      "gitVersion": "77eeeb9b44748caea1f0fb2f6c9095dcd8817fc0"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": "7710152408755601498"
+      },
+      "signature": {
+        "hash": "HAe4tV1lRXOx1rY9+iWvJAWogA4=",
+        "keyId": {
+          "high": 1784479758,
+          "low": 3,
+          "unsigned": false
+        }
+      }
+    },
+    "operationTime": {
+      "$timestamp": "7710152408755601498"
+    }
+  }
+}
