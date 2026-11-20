@@ -10,8 +10,8 @@
 
 | Milestone | Target | Status | Verification Summary |
 | :--- | :--- | :--- | :--- |
-| **M0: Workspace Invariants** | `AGENTS.md`, `.agents/skills/` | **Completed** | Strict constitution active; all 6 engineering skills installed & verified; 0 em dashes |
-| **M1: Engineering Foundation** | Git, `.github/`, `docs/` | **Completed** | Unified monorepo on `main`; full context system created |
+| **M0: Development Environment & Tooling** | Environment & Tooling Setup | **Completed** | Strict linting, TypeScript compiler, Git repository, and project toolchain configured |
+| **M1: Engineering Foundation** | Git, `.github/`, `docs/` | **Completed** | Unified monorepo on `main`; full documentation and architecture specifications created |
 | **M2: Architecture & Requirements** | Requirements, Architecture, DB, UI/UX | **Completed** | 100% table-based specs, vector diagrams, and MongoDB Mongoose design |
 | **M3: Backend API & Database** | Express, TypeScript, Mongoose, Atlas | **Completed** | Live MongoDB Atlas seeded (1 admin, 10 doctors, 40 patients); zero TS errors; Railway deployment active |
 | **M4: Decoupled Repositories** | GitHub separate remotes | **Completed** | `doctor-tracker-backend` & `doctor-tracker-frontend` created, subtree-synced, and public |
@@ -20,7 +20,7 @@
 | **M7: Specification Audit & Verification** | Complete Compliance Audit Reports | **Completed** | 67 of 67 requirements compliant; `PROJECT_SPECIFICATION_ALIGNMENT_AUDIT.md` and `PROJECT_AUDIT_SELF_VERIFICATION.md` completed |
 | **M8: Performance & Concurrency Audit** | Deep Audit & Adjudication (Phases 1-1.3) | **Completed** | 120-run benchmarks over TLS, raw Q1-Q11 query plans, 6 concurrency stress tests, 4 approved / 3 rejected optimizations |
 | **M9: Performance Optimization (Phase 2)** | REC-01, REC-02, REC-03, REC-04 Implementation | **Completed** | 300ms debouncing active, AbortSignal forwarded, Doctor createdAt index active (IXSCAN verified), analytics parallelized |
-| **M10: UI Audit, Dark Theme & Token System** | Impeccable Audit, Dark Theme, Token Refactor | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active; central `themeTokens.ts` system established; stark white pill and icon backgrounds eliminated in dark mode (dark neutral gray #18181b with > 10:1 contrast); Magic UI AnimatedThemeToggler icon collision resolved (mutually exclusive rendering); patient page crash resolved; donut tooltip high-contrast fix; unbroken segmented status tabs; mobile viewport audit passed at 375px & 360px (zero horizontal overflow across all pages, 2x2 responsive tab layout, stacked date pickers, full-width slide-over drawer); resolved Mermaid label collisions in UI state transitions; synchronized standardized README templates and visual evidence across monorepo and both decoupled repositories |
+| **M10: UI Audit, Dark Theme & Token System** | Accessibility & UI Audit, Dark Theme, Token Refactor | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active; central `themeTokens.ts` system established; stark white pill and icon backgrounds eliminated in dark mode (dark neutral gray #18181b with > 10:1 contrast); Magic UI AnimatedThemeToggler icon collision resolved (mutually exclusive rendering); patient page crash resolved; donut tooltip high-contrast fix; unbroken segmented status tabs; mobile viewport audit passed at 375px & 360px (zero horizontal overflow across all pages, 2x2 responsive tab layout, stacked date pickers, full-width slide-over drawer); resolved Mermaid label collisions in UI state transitions; synchronized standardized README templates and visual evidence across monorepo and both decoupled repositories |
 | **M11: Brand Logo, Favicon & Mobile Normalization** | Square Clinical Logo, Favicon Branding, "Dr." Fix | **Completed** | Created bespoke clinical square brand logo (`BrandLogo.tsx`) with squircle gradient, pure white cross, and contrasting ECG heartbeat pulse; integrated into Navbar, Login view, and App Router `icon.svg` / `/favicon.ico`; normalized doctor display logic in `PatientTable.tsx` eliminating duplicated "Dr. Dr." prefixes across mobile card and desktop views; verified clean build with 0 TypeScript errors |
 
 ---
@@ -31,7 +31,7 @@
 | :--- | :--- | :--- |
 | **Host Toolchain** | Node.js `v24.19.0`, npm `11.17.0`, Python `3.12.10`, Git `2.55.0`, GitHub CLI `2.100.0`, Railway CLI `v5.75.0` | Verified on Windows host via CLI checks |
 | **Git Repositories** | Unified monorepo + decoupled remotes (`backend`, `frontend`) pushed to GitHub | Verified via GitHub CLI and git remotes |
-| **Skills System** | All 6 skills (`environment-setup`, `spec-kit`, `impeccable`, `architecture`, `owasp-security`, `git-workflow`) installed in `.agents/skills/` | Verified with valid YAML frontmatter and inventory entries |
+| **Engineering Standards** | Architecture, Security & Design Guidelines | Clean separation of concerns, OWASP ASVS compliance, and WCAG 2.2 AA accessibility standards enforced |
 | **Database Live Seeding** | Live MongoDB Atlas cluster connected and seeded with 1 admin, 10 doctors, 40 patients | Verified via `server/src/seed.ts` run |
 | **Backend Service** | Express 5 + TypeScript + Mongoose REST API built with zero errors in `server/dist/` | Verified via `npm run build` |
 | **Design System & Tokens** | 3 primary brand scales (Slate 60%, Clinical Teal 30%, Accent Amber 10%), 10 shades each (50-900) | Configured in `tailwind.config.ts` and `globals.css` |
@@ -84,6 +84,6 @@ UI audit, dark theme implementation, and all four reported UI defects resolved a
 
 ---
 
-# 7. Exact Next Action
+# 7. Operational Status
 
-Author the requested System Design Interview Preparation Notes summarizing architecture, queries, indexing, pagination, and performance decisions.
+Project is in full production readiness. Live deployments active on Vercel and Railway.
