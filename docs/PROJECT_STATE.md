@@ -20,7 +20,7 @@
 | **M7: Specification Audit & Verification** | Complete Compliance Audit Reports | **Completed** | 67 of 67 requirements compliant; `PROJECT_SPECIFICATION_ALIGNMENT_AUDIT.md` and `PROJECT_AUDIT_SELF_VERIFICATION.md` completed |
 | **M8: Performance & Concurrency Audit** | Deep Audit & Adjudication (Phases 1-1.3) | **Completed** | 120-run benchmarks over TLS, raw Q1-Q11 query plans, 6 concurrency stress tests, 4 approved / 3 rejected optimizations |
 | **M9: Performance Optimization (Phase 2)** | REC-01, REC-02, REC-03, REC-04 Implementation | **Completed** | 300ms debouncing active, AbortSignal forwarded, Doctor createdAt index active (IXSCAN verified), analytics parallelized |
-| **M10: UI Audit & Dark Theme (Phase 3)** | Impeccable Audit, Dark Theme, Bug Fixes | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active (zero blue tint), Magic UI / shadcn AnimatedThemeToggler integrated, patient page crash resolved, donut tooltip contrast fixed, tabs unbroken |
+| **M10: UI Audit, Dark Theme & Token System** | Impeccable Audit, Dark Theme, Token Refactor | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active; central `themeTokens.ts` system established; stark white pill and icon backgrounds eliminated in dark mode (dark neutral gray #18181b with > 10:1 contrast); Magic UI AnimatedThemeToggler integrated; patient page crash resolved; donut tooltip high-contrast fix; unbroken segmented status tabs |
 
 ---
 
@@ -44,7 +44,7 @@
 | **Specification Audit** | 15-section exhaustive alignment audit and independent self-verification report | Published in `docs/` with 100% compliance |
 | **Performance Audit (Phases 1-1.3)** | 5 audit docs, raw execution trees (Q1-Q11), benchmark CSV (120 runs), concurrency logs, final decisions | 100% read-only compliance, verified 48.68 ms parallel savings, preserved patient regex UX & doctor_id index |
 | **Phase 2 Optimizations** | Debounce hook (REC-01), AbortSignal (REC-02), Doctor createdAt index (REC-03), Parallel Analytics (REC-04) | Verified: Q1 uses `IXSCAN (createdAt_-1)` eliminating in-memory sort; TypeScript compiles with 0 errors |
-| **Phase 3 UI & Dark Theme** | Impeccable UI audit, true black background (#000000), neutral dark gray (#121212), clinical teal accents, Magic UI AnimatedThemeToggler, badge fix, tooltip fix, unbroken tabs, patient page crash fix | Live Vercel deployment verified READY, 0 crash on /patients, high-contrast donut tooltips, unbroken segmented tabs |
+| **Phase 3 UI, Dark Theme & Token System** | Impeccable UI audit, true black background (#000000), neutral dark gray (#121212), clinical teal accents, central `themeTokens.ts` single source of truth, dark neutral pills and icon boxes, Magic UI AnimatedThemeToggler, badge fix, tooltip fix, unbroken tabs, patient page crash fix | Live Vercel deployment verified READY, 0 crash on /patients, high-contrast donut tooltips (> 14:1 contrast), dark neutral pills (> 10:1 contrast), unbroken segmented tabs |
 
 ---
 
