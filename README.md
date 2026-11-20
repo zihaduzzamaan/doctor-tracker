@@ -271,6 +271,17 @@ The application implements defense-in-depth performance engineering across both 
 | **Zero Layout Shift (CLS = 0)** | Enforced `overflow-y: scroll`, `min-h-[520px]` grid containers, and pulse skeletons | Eliminates scrollbar pop-in jitter and layout jump during data loading and view transitions |
 | **Cache Stability** | `placeholderData: keepPreviousData` in TanStack Query | Retains previous results smoothly while refetching filtered results with subtle opacity feedback |
 
+### Security & Data Protection Controls
+
+| Security Layer | Implementation Mechanism | Protection Standard |
+| :--- | :--- | :--- |
+| **NoSQL Injection Defense** | `express-mongo-sanitize` stripping `$` operator keys from `req.body` and `req.params` | Prevents operator injection; verified via automated rejection of malicious query payloads |
+| **Server-Side Authorization** | JWT verification middleware (`authenticate`) guarding all clinical routes | Enforces valid Bearer tokens on `/doctors/*`, `/patients/*`, and `/analytics/*` |
+| **Credential Protection** | `bcryptjs` password hashing with 10 salt rounds; excluded via `select('-password')` | Zero plain-text passwords stored; credentials never exposed in API JSON responses |
+| **Input Validation** | Strict Zod schemas validating types, lengths, and constraints before DB calls | Malformed payloads rejected with HTTP 400 before database execution |
+| **Transport & Headers** | `helmet` HTTP headers and strict CORS origin whitelisting | Prevents cross-origin tampering, clickjacking, and unauthorized origin lookups |
+| **Safe Error Handling** | Centralized Express error handler masking stack traces in production | Prevents internal database structure and server footprint leakage to clients |
+
 ---
 
 # 7. UI Component States
