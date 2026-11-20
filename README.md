@@ -17,7 +17,7 @@ Doctor Tracker is a secure, high-performance administrative web application engi
 
 | Resource | Target URL | Notes |
 | :--- | :--- | :--- |
-| **Frontend Application** | `https://doctor-tracker-client.vercel.app` | Hosted on Vercel (Edge CDN) |
+| **Frontend Application** | `https://doctor-tracker-frontend-theta.vercel.app` | Hosted on Vercel (Edge CDN) |
 | **Backend REST API** | `https://doctor-tracker-backend-production.up.railway.app` | Hosted on Railway (AWS / Cloud) |
 | **Health Check Endpoint** | `https://doctor-tracker-backend-production.up.railway.app/health` | Live status 200 with uptime and service health |
 | **Frontend GitHub Repository** | `https://github.com/zihaduzzamaan/doctor-tracker-frontend` | Decoupled client Next.js repository |
@@ -32,7 +32,77 @@ Doctor Tracker is a secure, high-performance administrative web application engi
 
 ---
 
-# 2. System Architecture
+# 2. Setup Guide & Local Installation
+
+Follow these step-by-step instructions to run the application locally. Both the frontend client and backend server provide dedicated `.env.example` template files.
+
+### Prerequisites
+* **Node.js**: `v20.0.0` or higher (`v24.19.0` recommended)
+* **npm**: `10.0.0` or higher (`11.17.0` recommended)
+* **MongoDB**: A running local MongoDB instance (`mongodb://localhost:27017`) or a free MongoDB Atlas connection string
+
+### Step-by-Step Installation
+
+#### 1. Clone the Monorepo
+```bash
+git clone https://github.com/zihaduzzamaan/doctor-tracker.git
+cd doctor-tracker
+```
+
+#### 2. Backend Server Setup
+```bash
+# Navigate to backend directory
+cd server
+
+# Install dependencies
+npm install
+
+# Configure environment variables
+cp .env.example .env
+
+# (Optional) Seed the database with sample clinical records
+npm run seed
+
+# Build and start the backend development server (Port 5000)
+npm run dev
+```
+
+#### 3. Frontend Client Setup
+```bash
+# In a new terminal window, navigate to client directory
+cd client
+
+# Install dependencies
+npm install
+
+# Configure environment variables
+cp .env.example .env.local
+
+# Start the frontend Next.js development server (Port 3000)
+npm run dev
+```
+
+#### 4. Environment Variables Configuration (`.env.example`)
+
+##### Backend `.env.example` (`server/.env.example`)
+```bash
+PORT=5000
+NODE_ENV=development
+CLIENT_URL=http://localhost:3000
+MONGODB_URI=mongodb://localhost:27017/doctor_tracker
+JWT_SECRET=doctor_tracker_jwt_secret_dev_key
+JWT_EXPIRES_IN=7d
+```
+
+##### Frontend `.env.example` (`client/.env.example`)
+```bash
+# Points to local backend or production Railway backend
+NEXT_PUBLIC_API_URL=http://localhost:5000/api/v1
+```
+
+---
+
+# 3. System Architecture
 
 Doctor Tracker uses a separated two-tier architecture that cleanly isolates client rendering from server business logic and database persistence.
 
@@ -212,7 +282,7 @@ stateDiagram-v2
 
 ---
 
-# 7. Technical Decisions
+# 8. Technical Decisions
 
 ### Decision 1: Decoupled Next.js Client and Standalone Express Server
 We separated the Next.js client from the Express backend instead of writing API route handlers inside Next.js. This maintains complete isolation between client bundles and backend security middleware, ensures Node.js server connections to MongoDB Atlas are long-lived and pooled rather than cold-started on edge lambdas, and provides a standalone REST API ready for future mobile apps.
@@ -222,7 +292,7 @@ We selected MongoDB with Mongoose because clinic documents (doctors and assigned
 
 ---
 
-# 8. API Reference
+# 9. API Reference
 
 Base URL: `https://doctor-tracker-backend-production.up.railway.app/api/v1`
 
@@ -257,6 +327,28 @@ Base URL: `https://doctor-tracker-backend-production.up.railway.app/api/v1`
 
 ---
 
-# 9. License
+# 10. Visual Evidence (Desktop & Mobile Views)
+
+High-resolution visual evidence captured from the production build, demonstrating WCAG 2.2 Level AA accessibility, 5-state UI coverage, dark theme tokens, and zero horizontal overflow across responsive viewports:
+
+### Desktop Views
+
+| Clinical Dashboard | Medical Practitioners Directory |
+| :---: | :---: |
+| ![Clinical Operations Dashboard](docs/screenshots/desktop_dashboard.png) | ![Medical Practitioners Directory](docs/screenshots/desktop_doctors.png) |
+
+| Inpatient Management Directory | Clinical Staff Login |
+| :---: | :---: |
+| ![Inpatient Management](docs/screenshots/desktop_patients.png) | ![Clinical Staff Authentication](docs/screenshots/desktop_login.png) |
+
+### Mobile Views (375px & 360px Viewports)
+
+| Mobile Inpatient Management | Mobile Slide-Over Drawer | Mobile Navigation Menu |
+| :---: | :---: | :---: |
+| ![Mobile Inpatients](docs/screenshots/mobile_patients.png) | ![Mobile Drawer](docs/screenshots/mobile_drawer.png) | ![Mobile Navigation](docs/screenshots/mobile_nav.png) |
+
+---
+
+# 11. License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
