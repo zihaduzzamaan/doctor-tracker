@@ -56,6 +56,7 @@
 | **Bespoke Modals, Custom Selects & Date Pickers** | Replaced native OS select dropdowns, raw date inputs, and window.confirm dialogs with custom accessible components (CustomSelect, CustomDatePicker, ConfirmModal) | Verified: zero native OS popups, seamless light/dark styling, clean TypeScript build with exit code 0 |
 | **Click Ring & Clear Button Harmonization** | Extinguished mouse click ring blinks, corrected active button dark mode tokens, decoupled date clear triggers, and unified Clear Filters actions | Verified: zero ring blinks on click, smooth active feedback, clean TypeScript build with exit code 0 |
 | **Ubiquitous Label Simplification** | Replaced all verbose medical jargon with clear, consistent terms ("Doctors", "Patients", "Add Doctor", "Add Patient", "Assigned Doctor", "Diagnosis") | Verified: unified information architecture, zero jargon dissonance, clean TypeScript build with exit code 0 |
+| **Visual Evidence Refresh** | Captured high-resolution retina screenshots (2560x1800 desktop, 750x1624 mobile) across all views with simplified terminology, custom controls, and verified dark theme tokens | Verified: 9 images in docs/screenshots/, root and client README documentation updated with exact terms |
 
 ---
 

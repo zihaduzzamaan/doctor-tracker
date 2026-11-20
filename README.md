@@ -342,19 +342,19 @@ High-resolution visual evidence captured from the production build, demonstratin
 
 ### Desktop Views
 
-| Clinical Dashboard | Medical Practitioners Directory |
+| Dashboard | Doctors Directory |
 | :---: | :---: |
-| ![Clinical Operations Dashboard](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_dashboard.png) | ![Medical Practitioners Directory](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_doctors.png) |
+| ![Dashboard](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_dashboard.png) | ![Doctors Directory](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_doctors.png) |
 
-| Inpatient Management Directory | Clinical Staff Login |
+| Patients Directory | Clinic Staff Login |
 | :---: | :---: |
-| ![Inpatient Management](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_patients.png) | ![Clinical Staff Authentication](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_login.png) |
+| ![Patients Directory](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_patients.png) | ![Clinic Staff Login](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/desktop_login.png) |
 
 ### Mobile Views (375px & 360px Viewports)
 
-| Mobile Inpatient Management | Mobile Slide-Over Drawer | Mobile Navigation Menu |
+| Mobile Patients Directory | Mobile Doctor Patients Drawer | Mobile Navigation Menu |
 | :---: | :---: | :---: |
-| ![Mobile Inpatients](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_patients.png) | ![Mobile Drawer](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_drawer.png) | ![Mobile Navigation](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_nav.png) |
+| ![Mobile Patients Directory](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_patients.png) | ![Mobile Doctor Patients Drawer](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_drawer.png) | ![Mobile Navigation Menu](https://raw.githubusercontent.com/zihaduzzamaan/doctor-tracker/main/docs/screenshots/mobile_nav.png) |
 
 ---
 
