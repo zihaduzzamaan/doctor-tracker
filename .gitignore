@@ -49,6 +49,10 @@ Thumbs.db
 tmp/
 temp/
 
+# Local Developer Notes
+docs/SYSTEM_DESIGN_PREPARATION_NOTES.md
+*PREPARATION_NOTES*
+
 # Agent & Workspace Private Assets
 .agents/
 AGENTS.md
