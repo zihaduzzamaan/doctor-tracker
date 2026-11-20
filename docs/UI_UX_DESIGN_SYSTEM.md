@@ -13,15 +13,25 @@ Doctor Tracker uses a teal and slate color scheme. The goal is clear readability
 ### Interactive State Machine
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Loading: User navigates or triggers search
-    Loading --> Success: Data retrieved (rows > 0)
-    Loading --> Empty: Query returns 0 records
-    Loading --> Error: Server or network error
-    Success --> Disabled: Form mutation in progress
-    Disabled --> Success: Mutation complete
-    Empty --> Loading: User resets search filters
-    Error --> Loading: User clicks "Try Again"
+flowchart TD
+    Init(["Start: User Action / Route Change"]) --> Loading["1. Loading State<br/>(Pulse Skeletons, CLS = 0)"]
+    
+    Loading -->|"Data retrieved (rows > 0)"| Success["2. Success State<br/>(Interactive Tables & Charts)"]
+    Loading -->|"Query returns 0 records"| Empty["3. Empty State<br/>(Contextual Guidance & Reset CTA)"]
+    Loading -->|"Server or network error"| Error["4. Error State<br/>(Non-blocking Alert & Retry CTA)"]
+    
+    Success -->|"Form mutation in progress"| Disabled["5. Disabled State<br/>(Pointer Events Locked / Spinner)"]
+    Disabled -->|"Mutation resolved"| Success
+    
+    Empty -.->|"User resets filters"| Loading
+    Error -.->|"User clicks 'Try Again'"| Loading
+
+    style Init fill:#0D9488,stroke:#14B8A6,stroke-width:2px,color:#ffffff
+    style Loading fill:#1E293B,stroke:#0D9488,stroke-width:2px,color:#ffffff
+    style Success fill:#1E293B,stroke:#10B981,stroke-width:2px,color:#ffffff
+    style Empty fill:#1E293B,stroke:#F59E0B,stroke-width:2px,color:#ffffff
+    style Error fill:#1E293B,stroke:#EF4444,stroke-width:2px,color:#ffffff
+    style Disabled fill:#1E293B,stroke:#64748B,stroke-width:2px,color:#ffffff
 ```
 
 ---

@@ -28,7 +28,6 @@ The diagram below illustrates the structural relationships between the three cor
   '
 }}%%
 erDiagram
-    direction LR
     USER ||--o{ DOCTOR : "registers"
     USER ||--o{ PATIENT : "intakes"
     DOCTOR ||--|{ PATIENT : "assigned"
