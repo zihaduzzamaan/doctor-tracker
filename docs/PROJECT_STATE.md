@@ -20,7 +20,7 @@
 | **M7: Specification Audit & Verification** | Complete Compliance Audit Reports | **Completed** | 67 of 67 requirements compliant; `PROJECT_SPECIFICATION_ALIGNMENT_AUDIT.md` and `PROJECT_AUDIT_SELF_VERIFICATION.md` completed |
 | **M8: Performance & Concurrency Audit** | Deep Audit & Adjudication (Phases 1-1.3) | **Completed** | 120-run benchmarks over TLS, raw Q1-Q11 query plans, 6 concurrency stress tests, 4 approved / 3 rejected optimizations |
 | **M9: Performance Optimization (Phase 2)** | REC-01, REC-02, REC-03, REC-04 Implementation | **Completed** | 300ms debouncing active, AbortSignal forwarded, Doctor createdAt index active (IXSCAN verified), analytics parallelized |
-| **M10: UI Audit, Dark Theme & Token System** | Impeccable Audit, Dark Theme, Token Refactor | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active; central `themeTokens.ts` system established; stark white pill and icon backgrounds eliminated in dark mode (dark neutral gray #18181b with > 10:1 contrast); Magic UI AnimatedThemeToggler integrated; patient page crash resolved; donut tooltip high-contrast fix; unbroken segmented status tabs |
+| **M10: UI Audit, Dark Theme & Token System** | Impeccable Audit, Dark Theme, Token Refactor | **Completed** | True black (#000000) and dark neutral gray (#121212) canvas active; central `themeTokens.ts` system established; stark white pill and icon backgrounds eliminated in dark mode (dark neutral gray #18181b with > 10:1 contrast); Magic UI AnimatedThemeToggler icon collision resolved (mutually exclusive rendering); patient page crash resolved; donut tooltip high-contrast fix; unbroken segmented status tabs |
 
 ---
 
