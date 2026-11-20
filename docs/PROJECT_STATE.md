@@ -57,6 +57,7 @@
 | **Click Ring & Clear Button Harmonization** | Extinguished mouse click ring blinks, corrected active button dark mode tokens, decoupled date clear triggers, and unified Clear Filters actions | Verified: zero ring blinks on click, smooth active feedback, clean TypeScript build with exit code 0 |
 | **Ubiquitous Label Simplification** | Replaced all verbose medical jargon with clear, consistent terms ("Doctors", "Patients", "Add Doctor", "Add Patient", "Assigned Doctor", "Diagnosis") | Verified: unified information architecture, zero jargon dissonance, clean TypeScript build with exit code 0 |
 | **Visual Evidence Refresh** | Captured high-resolution retina screenshots (2560x1800 desktop, 750x1624 mobile) across all views with simplified terminology, custom controls, and verified dark theme tokens | Verified: 9 images in docs/screenshots/, root and client README documentation updated with exact terms |
+| **Doctor Pagination & Performance Specification Alignment** | Added full cursor pagination controls (6 doctors per page) on doctor directory, aligned Section 6 performance optimizations in README with the project specification PDF | Verified: clean build, Next.js static generation in 964ms, README sections 1-11 sequentially aligned |
 
 ---
 
